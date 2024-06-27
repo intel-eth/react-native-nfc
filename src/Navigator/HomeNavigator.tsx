@@ -7,12 +7,14 @@ import {isIOS} from '@/Helper/VersionCheck';
 import {theme} from '@/Theme/Theme';
 import Login from '@/Containers/Authentication/Login';
 import Splash from '@/Containers/Authentication/Splash/Splash';
+import MainTab from './BottomTabNavigator/Maintab';
 
 const Stack = createNativeStackNavigator();
 const SearchStack = createStackNavigator();
 
 export const SPLASH = 'Splash';
 export const LOGIN = 'Login';
+export const MAIN_TAB = 'MainTab';
 
 const MainStackNavigator = () => {
   const options = {
@@ -23,14 +25,13 @@ const MainStackNavigator = () => {
     <NavigationContainer>
       <StatusBar
         animated={true}
-        barStyle={isIOS() ? 'dark-content' : 'light-content'}
+        barStyle={'light-content'}
       />
       <Stack.Navigator
         initialRouteName="Splash"
         screenOptions={{headerShown: false}}>
         <Stack.Screen name={SPLASH} component={Splash} />
-        <Stack.Screen name={LOGIN} component={Login} />
-       
+        <Stack.Screen name={MAIN_TAB} component={MainTab} />
       </Stack.Navigator>
     </NavigationContainer>
   );

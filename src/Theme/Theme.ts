@@ -13,7 +13,10 @@ export const theme = {
     black: '#000000',
     pear: '#DDF247',
     blackBG: '#111111',
+    dark_jungle_green: '#1d1d1d',
+    onxy: '#161616',
     fontGray: '#888888',
+    darkGray: '#a5a5a5',
     red: '#FF0000',
   },
 
@@ -116,6 +119,29 @@ export const theme = {
     },
     //#endregion
 
+    //#region 20
+    plus_jakarta_sans_regular_20: {
+      ...FontSize.fontSize_20(true),
+      color: 'black',
+      fontFamily: PLUS_JAKARTA_SANS_REGULAR,
+    },
+    plus_jakarta_sans_medium_20: {
+      ...FontSize.fontSize_20(true),
+      color: 'black',
+      fontFamily: PLUS_JAKARTA_SANS_MEDIUM,
+    },
+    plus_jakarta_sans_semibold_20: {
+      ...FontSize.fontSize_20(true),
+      color: 'black',
+      fontFamily: PLUS_JAKARTA_SANS_SEMIBOLD,
+    },
+    plus_jakarta_sans_bold_20: {
+      ...FontSize.fontSize_20(true),
+      color: 'black',
+      fontFamily: PLUS_JAKARTA_SANS_BOLD,
+    },
+    //#endregion
+
     //#region 18
     plus_jakarta_sans_regular_18: {
       ...FontSize.fontSize_18(true),
@@ -134,6 +160,29 @@ export const theme = {
     },
     plus_jakarta_sans_bold_18: {
       ...FontSize.fontSize_18(true),
+      color: 'black',
+      fontFamily: PLUS_JAKARTA_SANS_BOLD,
+    },
+    //#endregion
+
+    //#region 16
+    plus_jakarta_sans_regular_16: {
+      ...FontSize.fontSize_16(true),
+      color: 'black',
+      fontFamily: PLUS_JAKARTA_SANS_REGULAR,
+    },
+    plus_jakarta_sans_medium_16: {
+      ...FontSize.fontSize_16(true),
+      color: 'black',
+      fontFamily: PLUS_JAKARTA_SANS_MEDIUM,
+    },
+    plus_jakarta_sans_semibold_16: {
+      ...FontSize.fontSize_16(true),
+      color: 'black',
+      fontFamily: PLUS_JAKARTA_SANS_SEMIBOLD,
+    },
+    plus_jakarta_sans_bold_16: {
+      ...FontSize.fontSize_16(true),
       color: 'black',
       fontFamily: PLUS_JAKARTA_SANS_BOLD,
     },

@@ -2,11 +2,17 @@ import React, {useEffect, useState} from 'react';
 import {Image, ImageBackground, StyleSheet, View} from 'react-native';
 import {SCREEN_HEIGHT, SCREEN_WIDTH} from '@/Helper/ResponsiveFonts';
 import {Text} from '@/Theme/Theme';
-import {LOGIN} from '@/Navigator/HomeNavigator';
+import {LOGIN, MAIN_TAB} from '@/Navigator/HomeNavigator';
 import Assets from '@/Utils/Assets/Assets';
+import STRINGS from '@/Utils/Constants/String';
 
 const Splash = ({navigation}: any) => {
-
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigation.navigate(MAIN_TAB);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -24,14 +30,14 @@ const Splash = ({navigation}: any) => {
             color="white"
             lineHeight={50}
             variant="plus_jakarta_sans_bold_40">
-            Unlock The
+            {STRINGS.splashScreen.unlock_The}
           </Text>
           <Text
             textAlign="center"
             color="white"
             lineHeight={50}
             variant="plus_jakarta_sans_bold_40">
-            Digital Universe
+            {STRINGS.splashScreen.digital_Universe}
           </Text>
           <Text
             textAlign="center"
@@ -40,8 +46,7 @@ const Splash = ({navigation}: any) => {
             lineHeight={22}
             marginHorizontal="30"
             variant="plus_jakarta_sans_semibold_18">
-            Mint your own unique NFTs today and join the revolution in digital
-            ownership
+            {STRINGS.splashScreen.splash_Desc}
           </Text>
         </ImageBackground>
       </View>
