@@ -9,6 +9,10 @@ import HomeBanner from '@/Assets/Svg/Common/homeBanner.svg';
 import ClockSnooze from '@/Assets/Svg/Common/clockSnooze.svg';
 import NFCScan from '@/Assets/Svg/Common/NFCScan.svg';
 import BottomSheetCheck from '@/Assets/Svg/Common/bottomSheetCheck.svg';
+import Error from '@/Assets/Svg/Common/error.svg';
+import Party from '@/Assets/Svg/Common/party.svg';
+import BlueCheck from '@/Assets/Svg/Common/blueCheck.svg';
+import Warning from '@/Assets/Svg/Common/warning.svg';
 
 import UserImage from '@/Assets/Svg/Dummy/userImage.svg';
 import CryptoIcon from '@/Assets/Svg/Dummy/cryptoIcon.svg';
@@ -27,6 +31,10 @@ const SVG = {
   CRYPTO_ICON: CryptoIcon,
   NFC_SCAN: NFCScan,
   BOTTOM_SHEET_CHECK: BottomSheetCheck,
+  ERROR: Error,
+  PARTY: Party,
+  BLUE_CHECK: BlueCheck,
+  WARNING:Warning,
 };
 
 export default SVG;

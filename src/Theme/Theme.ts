@@ -20,6 +20,7 @@ export const theme = {
     fontGray: '#888888',
     darkGray: '#a5a5a5',
     placeHolder: '#818181',
+    dimGray: '#626262',
     borderColor: '#343434',
     gray: '#e5e5e5',
     error: '#FB3766',

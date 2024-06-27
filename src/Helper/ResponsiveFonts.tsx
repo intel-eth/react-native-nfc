@@ -40,6 +40,7 @@ export const BY_TWO_HALF = 0.2 * height;
 export const BY_THREE_HALF = 0.33 * height;
 export const BY_FOUR_HALF = 0.4 * height;
 export const BY_FIVE_HALF = 0.5 * height;
+export const BY_FIVE_AND_FIVE_HALF = 0.53 * height;
 export const BY_SIX_HALF = 0.6 * height;
 export const BY_SEVEN_HALF = 0.7 * height;
 export const BY_EIGHT_HALF = 0.8 * height;

@@ -10,7 +10,7 @@ import SVG from '@/Utils/Assets/Svg';
 import {Header} from '@/Components/Common/Header';
 import STRINGS from '@/Utils/Constants/String';
 import {Button} from '@/Components/Common/Button';
-import {ACTIVE_NFC} from '@/Navigator/HomeNavigator';
+import {ACTIVE_NFC, NFT_SUMMERY, RELEASE_ESCROW} from '@/Navigator/HomeNavigator';
 import {useIsAddNFCSuccess, useIsRemoveFirst} from '@/Hooks/CustomHook';
 import {dummyNFC} from '@/Utils/Constants/Dummy';
 import {useDispatch} from 'react-redux';
@@ -89,11 +89,13 @@ const Home = ({navigation}: any) => {
                               btnViewStyle={styles.btn2}
                               onPress={() => {
                                 {
-                                  index == 0
+                                  item.id == 1
                                     ? navigation.navigate(ACTIVE_NFC, {
                                         from: 'tagList',
                                       })
-                                    : navigation.navigate(ACTIVE_NFC);
+                                    : item.id == 2
+                                    ? navigation.navigate(RELEASE_ESCROW)
+                                    : navigation.navigate(NFT_SUMMERY,{item});
                                 }
                               }}
                               txtStyle={{

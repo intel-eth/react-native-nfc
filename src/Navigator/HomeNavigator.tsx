@@ -12,6 +12,8 @@ import ThirdWebWallet from '@/Containers/Authentication/EmptyWhite/ThirdWebWalle
 import ActiveNFC from '@/Containers/NFC/ActiveNFC';
 import AddNFC from '@/Containers/NFC/AddNFC';
 import Home from '@/Containers/Home';
+import ReleaseEscrow from '@/Containers/ReleaseEscrow';
+import NFTSummery from '@/Containers/NFTSummery';
 
 const Stack = createNativeStackNavigator();
 const SearchStack = createStackNavigator();
@@ -25,6 +27,8 @@ export const THIRD_WEB_WALLET = 'ThirdWebWallet';
 export const HOME = 'Home';
 export const ACTIVE_NFC = 'ActiveNFC';
 export const ADD_NFC = 'AddNFC';
+export const RELEASE_ESCROW = 'ReleaseEscrow';
+export const NFT_SUMMERY = 'NFTSummery';
 
 const MainStackNavigator = () => {
   const options = {
@@ -70,6 +74,16 @@ const NFCMintingNavigator = () => {
         <Stack.Screen
           name={ADD_NFC}
           component={AddNFC}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={RELEASE_ESCROW}
+          component={ReleaseEscrow}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={NFT_SUMMERY}
+          component={NFTSummery}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
