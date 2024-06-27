@@ -8,6 +8,7 @@ import {theme} from '@/Theme/Theme';
 import Login from '@/Containers/Authentication/Login';
 import Splash from '@/Containers/Authentication/Splash/Splash';
 import MainTab from './BottomTabNavigator/Maintab';
+import ThirdWebWallet from '@/Containers/Authentication/EmptyWhite/ThirdWebWallet';
 
 const Stack = createNativeStackNavigator();
 const SearchStack = createStackNavigator();
@@ -15,6 +16,7 @@ const SearchStack = createStackNavigator();
 export const SPLASH = 'Splash';
 export const LOGIN = 'Login';
 export const MAIN_TAB = 'MainTab';
+export const THIRD_WEB_WALLET = 'ThirdWebWallet';
 
 const MainStackNavigator = () => {
   const options = {
@@ -23,21 +25,27 @@ const MainStackNavigator = () => {
 
   return (
     <NavigationContainer>
-      <StatusBar
-        animated={true}
-        barStyle={'light-content'}
-      />
+      <StatusBar animated={true} barStyle={'light-content'} />
       <Stack.Navigator
         initialRouteName="Splash"
         screenOptions={{headerShown: false}}>
         <Stack.Screen name={SPLASH} component={Splash} />
-        <Stack.Screen name={MAIN_TAB} component={MainTab} />
+        <Stack.Screen
+          options={{gestureEnabled: false}}
+          name={MAIN_TAB}
+          component={MainTab}
+        />
+        <Stack.Screen
+          options={{gestureEnabled: false}}
+          name={THIRD_WEB_WALLET}
+          component={ThirdWebWallet}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
-// const OwnerNavigator = () => {
+// const NFCMintingNavigator = () => {
 //   return (
 //     <NavigationContainer independent>
 //       <Stack.Navigator screenOptions={{headerShown: false}}>

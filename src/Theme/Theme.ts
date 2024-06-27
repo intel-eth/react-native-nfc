@@ -12,11 +12,13 @@ export const theme = {
     white: '#FFFFFF',
     black: '#000000',
     pear: '#DDF247',
+    logoutFont: 'rgba(221, 242, 71, 0.6)',
     blackBG: '#111111',
     dark_jungle_green: '#1d1d1d',
     onxy: '#161616',
     fontGray: '#888888',
     darkGray: '#a5a5a5',
+    gray: '#e5e5e5',
     red: '#FF0000',
   },
 
@@ -119,6 +121,29 @@ export const theme = {
     },
     //#endregion
 
+    //#region 24
+    plus_jakarta_sans_regular_24: {
+      ...FontSize.fontSize_24(true),
+      color: 'black',
+      fontFamily: PLUS_JAKARTA_SANS_REGULAR,
+    },
+    plus_jakarta_sans_medium_24: {
+      ...FontSize.fontSize_24(true),
+      color: 'black',
+      fontFamily: PLUS_JAKARTA_SANS_MEDIUM,
+    },
+    plus_jakarta_sans_semibold_24: {
+      ...FontSize.fontSize_24(true),
+      color: 'black',
+      fontFamily: PLUS_JAKARTA_SANS_SEMIBOLD,
+    },
+    plus_jakarta_sans_bold_24: {
+      ...FontSize.fontSize_24(true),
+      color: 'black',
+      fontFamily: PLUS_JAKARTA_SANS_BOLD,
+    },
+    //#endregion
+
     //#region 20
     plus_jakarta_sans_regular_20: {
       ...FontSize.fontSize_20(true),
@@ -183,6 +208,29 @@ export const theme = {
     },
     plus_jakarta_sans_bold_16: {
       ...FontSize.fontSize_16(true),
+      color: 'black',
+      fontFamily: PLUS_JAKARTA_SANS_BOLD,
+    },
+    //#endregion
+
+     //#region 14
+     plus_jakarta_sans_regular_14: {
+      ...FontSize.fontSize_14(true),
+      color: 'black',
+      fontFamily: PLUS_JAKARTA_SANS_REGULAR,
+    },
+    plus_jakarta_sans_medium_14: {
+      ...FontSize.fontSize_14(true),
+      color: 'black',
+      fontFamily: PLUS_JAKARTA_SANS_MEDIUM,
+    },
+    plus_jakarta_sans_semibold_14: {
+      ...FontSize.fontSize_14(true),
+      color: 'black',
+      fontFamily: PLUS_JAKARTA_SANS_SEMIBOLD,
+    },
+    plus_jakarta_sans_bold_14: {
+      ...FontSize.fontSize_14(true),
       color: 'black',
       fontFamily: PLUS_JAKARTA_SANS_BOLD,
     },

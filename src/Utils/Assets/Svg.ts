@@ -8,6 +8,9 @@ import RoundUser from '@/Assets/Svg/Common/roundUser.svg';
 import HomeBanner from '@/Assets/Svg/Common/homeBanner.svg';
 import ClockSnooze from '@/Assets/Svg/Common/clockSnooze.svg';
 
+import UserImage from '@/Assets/Svg/Dummy/userImage.svg';
+import CryptoIcon from '@/Assets/Svg/Dummy/cryptoIcon.svg';
+
 const SVG = {
   FIRST: first,
   SECOND: second,
@@ -18,6 +21,8 @@ const SVG = {
   ROUND_USER: RoundUser,
   HOME_BANNER: HomeBanner,
   CLOCK_SNOOZE: ClockSnooze,
+  USER_IMAGE: UserImage,
+  CRYPTO_ICON: CryptoIcon,
 };
 
 export default SVG;

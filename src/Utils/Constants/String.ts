@@ -23,8 +23,13 @@ const STRINGS = {
   //       : '',
   // },
 
+  bottomSheet: {
+    loginHeader: 'Login',
+  },
+  
   buttonTitle: {
     login: 'Log in',
+    continue: 'Continue',
   },
 };
 export default STRINGS;
@@ -35,3 +40,12 @@ export const SUCCESS_TOAST = 'successToast';
 export const TOP = 'top';
 export const BOTTOM = 'bottom';
 // ----------------------------
+
+// Gender Data
+export const loginBottomSheet = [
+  {string: 'Connect wallet', id: '1'},
+  {string: 'Sign message', id: '2'},
+];
+
+
+

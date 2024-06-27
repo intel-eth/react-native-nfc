@@ -1,4 +1,5 @@
 import {dynamicScale} from '@/Helper/ResponsiveFonts';
+import {useIsUserLogin} from '@/Hooks/CustomHook';
 import SVG from '@/Utils/Assets/Svg';
 import React from 'react';
 import {View, ViewStyle} from 'react-native';
@@ -9,6 +10,7 @@ interface IHeaderProps {
 }
 
 export function Header({withUser, headerStyle}: IHeaderProps) {
+  const isLogin = useIsUserLogin();
   return (
     <View
       style={[
@@ -22,7 +24,15 @@ export function Header({withUser, headerStyle}: IHeaderProps) {
         {...headerStyle},
       ]}>
       <SVG.VAULT_X style={{}} />
-      {withUser && <SVG.ROUND_USER style={{}} />}
+      {withUser && (
+        <>
+          {isLogin ? (
+            <SVG.USER_IMAGE height={40} width={40} />
+          ) : (
+            <SVG.ROUND_USER style={{}} />
+          )}
+        </>
+      )}
     </View>
   );
 }
