@@ -89,25 +89,44 @@ const NFTSummery = ({navigation, route}: any) => {
                 borderColor: theme.colors.borderColor,
               }}>
               <SVG.BLUE_CHECK style={{alignSelf: 'center'}} />
-
-              <Text
-                variant="plus_jakarta_sans_bold_16"
-                mt="14"
-                letterSpacing={-0.5}
-                textAlign="center"
-                color="white">
-                The blockchain confirms{' '}
+              {params.id == 4 ? (
+                <>
+                  <Text
+                    variant="plus_jakarta_sans_bold_16"
+                    mt="14"
+                    letterSpacing={-0.5}
+                    textAlign="center"
+                    color="white">
+                    Fascinated by this artwork?
+                  </Text>
+                  <Text
+                    variant="plus_jakarta_sans_bold_16"
+                    letterSpacing={-0.5}
+                    textAlign="center"
+                    color="white">
+                    Make it yours today on VaultX!
+                  </Text>
+                </>
+              ) : (
                 <Text
                   variant="plus_jakarta_sans_bold_16"
                   mt="14"
-                  textTransform="capitalize"
-                  letterSpacing={-0.9}
+                  letterSpacing={-0.5}
                   textAlign="center"
-                  color="pear">
-                  you as the current rightful owner of this artwork.
+                  color="white">
+                  The blockchain confirms{' '}
+                  <Text
+                    variant="plus_jakarta_sans_bold_16"
+                    mt="14"
+                    textTransform="capitalize"
+                    letterSpacing={-0.9}
+                    textAlign="center"
+                    color="pear">
+                    you as the current rightful owner of this artwork.
+                  </Text>
+                  What an amazing piece you have!
                 </Text>
-                What an amazing piece you have!
-              </Text>
+              )}
             </View>
             <Button
               btnViewStyle={{
