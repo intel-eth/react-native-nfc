@@ -13,6 +13,7 @@ export const theme = {
     black: '#000000',
     pear: '#DDF247',
     logoutFont: 'rgba(221, 242, 71, 0.6)',
+    dimWhite: 'rgba(255, 255, 255, 0.6)',
     blackBG: '#111111',
     dark_jungle_green: '#1d1d1d',
     onxy: '#161616',

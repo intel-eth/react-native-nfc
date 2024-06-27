@@ -5,8 +5,8 @@ import {theme} from '@/Theme/Theme';
 import {isAndroid} from '@/Helper/VersionCheck';
 import {dynamicScale} from '@/Helper/ResponsiveFonts';
 import Login from '@/Containers/Authentication/Login';
-import Home from '@/Containers/Home';
 import SVG from '@/Utils/Assets/Svg';
+import {NFCMintingNavigator} from '../HomeNavigator';
 const Tab = createBottomTabNavigator();
 
 const MainTab = ({navigation}: any) => {
@@ -20,9 +20,8 @@ const MainTab = ({navigation}: any) => {
         }}>
         <Tab.Screen
           name="Home"
-          component={Home}
+          component={NFCMintingNavigator}
           options={{
-            // lazy: true,
             tabBarIcon: ({focused}) => (
               <>{focused ? <SVG.FIRST /> : <SVG.UN_ACTIVE_FIRST />}</>
             ),

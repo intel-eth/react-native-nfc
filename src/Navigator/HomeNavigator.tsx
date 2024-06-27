@@ -9,6 +9,9 @@ import Login from '@/Containers/Authentication/Login';
 import Splash from '@/Containers/Authentication/Splash/Splash';
 import MainTab from './BottomTabNavigator/Maintab';
 import ThirdWebWallet from '@/Containers/Authentication/EmptyWhite/ThirdWebWallet';
+import ActiveNFC from '@/Containers/NFC/ActiveNFC';
+import AddNFC from '@/Containers/NFC/AddNFC';
+import Home from '@/Containers/Home';
 
 const Stack = createNativeStackNavigator();
 const SearchStack = createStackNavigator();
@@ -17,6 +20,11 @@ export const SPLASH = 'Splash';
 export const LOGIN = 'Login';
 export const MAIN_TAB = 'MainTab';
 export const THIRD_WEB_WALLET = 'ThirdWebWallet';
+
+// NFC
+export const HOME = 'Home';
+export const ACTIVE_NFC = 'ActiveNFC';
+export const ADD_NFC = 'AddNFC';
 
 const MainStackNavigator = () => {
   const options = {
@@ -45,27 +53,32 @@ const MainStackNavigator = () => {
   );
 };
 
-// const NFCMintingNavigator = () => {
-//   return (
-//     <NavigationContainer independent>
-//       <Stack.Navigator screenOptions={{headerShown: false}}>
-//         <Stack.Screen
-//           name={OWNER}
-//           component={Owner}
-//           options={{headerShown: false}}
-//         />
-//         <Stack.Screen
-//           name={ADD_PROPERTY}
-//           component={AddProperty}
-//           options={{headerShown: false}}
-//         />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   );
-// };
+const NFCMintingNavigator = () => {
+  return (
+    <NavigationContainer independent>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen
+          name={HOME}
+          component={Home}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={ACTIVE_NFC}
+          component={ActiveNFC}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={ADD_NFC}
+          component={AddNFC}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 // export {MainStackNavigator, SearchNavigator, OwnerNavigator};
 
-export {MainStackNavigator};
+export {MainStackNavigator, NFCMintingNavigator};
 
 const styles = StyleSheet.create({
   container: {

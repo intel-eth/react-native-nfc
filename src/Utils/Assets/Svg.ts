@@ -7,6 +7,7 @@ import VaultX from '@/Assets/Svg/Common/vaultX.svg';
 import RoundUser from '@/Assets/Svg/Common/roundUser.svg';
 import HomeBanner from '@/Assets/Svg/Common/homeBanner.svg';
 import ClockSnooze from '@/Assets/Svg/Common/clockSnooze.svg';
+import NFCScan from '@/Assets/Svg/Common/NFCScan.svg';
 
 import UserImage from '@/Assets/Svg/Dummy/userImage.svg';
 import CryptoIcon from '@/Assets/Svg/Dummy/cryptoIcon.svg';
@@ -23,6 +24,7 @@ const SVG = {
   CLOCK_SNOOZE: ClockSnooze,
   USER_IMAGE: UserImage,
   CRYPTO_ICON: CryptoIcon,
+  NFC_SCAN: NFCScan,
 };
 
 export default SVG;

@@ -11,6 +11,7 @@ import SVG from '@/Utils/Assets/Svg';
 import {Header} from '@/Components/Common/Header';
 import STRINGS from '@/Utils/Constants/String';
 import {Button} from '@/Components/Common/Button';
+import { ACTIVE_NFC } from '@/Navigator/HomeNavigator';
 
 const Home = ({navigation}: any) => {
   return (
@@ -24,7 +25,7 @@ const Home = ({navigation}: any) => {
             style={{alignSelf: 'center', marginBottom: 5}}
           />
           <Pressable
-            onPress={() => console.log(1)}
+            onPress={() => navigation.navigate(ACTIVE_NFC)}
             style={{
               position: 'absolute',
               height: dynamicScale(42),
