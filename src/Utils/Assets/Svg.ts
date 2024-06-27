@@ -8,6 +8,7 @@ import RoundUser from '@/Assets/Svg/Common/roundUser.svg';
 import HomeBanner from '@/Assets/Svg/Common/homeBanner.svg';
 import ClockSnooze from '@/Assets/Svg/Common/clockSnooze.svg';
 import NFCScan from '@/Assets/Svg/Common/NFCScan.svg';
+import BottomSheetCheck from '@/Assets/Svg/Common/bottomSheetCheck.svg';
 
 import UserImage from '@/Assets/Svg/Dummy/userImage.svg';
 import CryptoIcon from '@/Assets/Svg/Dummy/cryptoIcon.svg';
@@ -25,6 +26,7 @@ const SVG = {
   USER_IMAGE: UserImage,
   CRYPTO_ICON: CryptoIcon,
   NFC_SCAN: NFCScan,
+  BOTTOM_SHEET_CHECK: BottomSheetCheck,
 };
 
 export default SVG;

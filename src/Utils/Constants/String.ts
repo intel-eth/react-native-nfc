@@ -25,11 +25,14 @@ const STRINGS = {
 
   bottomSheet: {
     loginHeader: 'Login',
+    registration_complete: 'Registration has been completed What next?',
   },
-  
+
   buttonTitle: {
     login: 'Log in',
     continue: 'Continue',
+    okay: 'Okay',
+    close: 'Close',
   },
 };
 export default STRINGS;
@@ -41,11 +44,14 @@ export const TOP = 'top';
 export const BOTTOM = 'bottom';
 // ----------------------------
 
-// Gender Data
+// Login Bottom Sheet Data
 export const loginBottomSheet = [
   {string: 'Connect wallet', id: '1'},
   {string: 'Sign message', id: '2'},
 ];
-
-
-
+// Add NFC Bottom Sheet Data
+export const addNFCBottomSheet = [
+  {string: 'Go to the Marketplace', id: '1'},
+  {string: 'Click “Create”', id: '2'},
+  {string: 'Choose “NFT Mint”', id: '3'},
+];
