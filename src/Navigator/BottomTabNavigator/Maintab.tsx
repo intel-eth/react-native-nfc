@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.black,
     borderTopWidth: 0,
     height: dynamicScale(65),
-    paddingTop: 30,
+    paddingTop: isAndroid() ? 0:30,
     paddingHorizontal: dynamicScale(15),
   },
 });

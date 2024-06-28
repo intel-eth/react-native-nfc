@@ -1,4 +1,5 @@
 import {dynamicScale} from '@/Helper/ResponsiveFonts';
+import { isAndroid } from '@/Helper/VersionCheck';
 import {useIsUserLogin} from '@/Hooks/CustomHook';
 import SVG from '@/Utils/Assets/Svg';
 import React from 'react';
@@ -20,6 +21,7 @@ export function Header({withUser, headerStyle}: IHeaderProps) {
           justifyContent: 'space-between',
           paddingHorizontal: dynamicScale(24),
           height: dynamicScale(40),
+          marginTop:isAndroid()?10:0
         },
         {...headerStyle},
       ]}>
