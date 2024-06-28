@@ -14,6 +14,10 @@ import Party from '@/Assets/Svg/Common/party.svg';
 import BlueCheck from '@/Assets/Svg/Common/blueCheck.svg';
 import Warning from '@/Assets/Svg/Common/warning.svg';
 
+import Line from '@/Assets/Svg/Splash/line.svg';
+import FaceIcon from '@/Assets/Svg/Splash/faceIcon.svg';
+import VaultLogo from '@/Assets/Svg/Splash/icon.svg';
+
 import UserImage from '@/Assets/Svg/Dummy/userImage.svg';
 import CryptoIcon from '@/Assets/Svg/Dummy/cryptoIcon.svg';
 
@@ -35,6 +39,9 @@ const SVG = {
   PARTY: Party,
   BLUE_CHECK: BlueCheck,
   WARNING:Warning,
+  LINE:Line,
+  FACE_ICON:FaceIcon,
+  VAULT_LOGO:VaultLogo,
 };
 
 export default SVG;
