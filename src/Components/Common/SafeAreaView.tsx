@@ -12,9 +12,7 @@ interface ISingleSafeAreaViewProps {
 export function SingleSafeAreaView({safeAreaStyle}: ISingleSafeAreaViewProps) {
   return (
     <>
-      <SafeAreaView
-        style={[{backgroundColor: theme.colors.blackBG}, {...safeAreaStyle}]}
-      />
+      <SafeAreaView className="bg-blackBG" style={[{...safeAreaStyle}]} />
     </>
   );
 }
