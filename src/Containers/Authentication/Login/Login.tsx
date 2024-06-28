@@ -1,6 +1,6 @@
 import {Header} from './../../../Components/Common/Header';
 import React, {useEffect, useRef, useState} from 'react';
-import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {BY_THREE_HALF, dynamicScale} from '@/Helper/ResponsiveFonts';
 import {Text, theme} from '@/Theme/Theme';
 import {SingleSafeAreaView} from '@/Components/Common/SafeAreaView';
@@ -94,29 +94,27 @@ const Login = ({navigation}: any) => {
         ) : (
           <Button
             title={STRINGS.buttonTitle.login}
+            // onPress={() => console.log()}
             onPress={() => refRBSheet.current.open()}
           />
         )}
 
         {isLogin && (
-          <TouchableOpacity
-            onPress={() => dispatch(userLogout())}
+          <View
             style={{
-              flex: 0.95,
+              flex: 0.9,
               justifyContent: 'flex-end',
-              alignSelf: 'center',
             }}>
-            <Text
-              color="logoutFont"
-              mt="6"
-              variant="plus_jakarta_sans_semibold_14">
-              Log out
-            </Text>
-          </TouchableOpacity>
+            <Button
+              btnViewStyle={{backgroundColor: theme.colors.white}}
+              onPress={() => dispatch(userLogout())}
+              title="Log out"
+            />
+          </View>
         )}
       </View>
 
-      <BottomModal height={BY_THREE_HALF} refe={refRBSheet}>
+      <BottomModal height={dynamicScale(BY_THREE_HALF)} refe={refRBSheet}>
         <>
           <View>
             <Text

@@ -66,7 +66,7 @@ const ActiveNFC = ({navigation, route}: any) => {
         </View>
       </View>
 
-      <BottomModal height={BY_FOUR_HALF} refe={refRBSheet}>
+      <BottomModal height={dynamicScale(BY_FOUR_HALF)} refe={refRBSheet}>
         <>
           <SVG.BOTTOM_SHEET_CHECK
             style={{alignSelf: 'center', marginTop: 15}}

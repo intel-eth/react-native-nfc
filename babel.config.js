@@ -17,6 +17,7 @@ plugins.push(
   ],
   ['@babel/plugin-proposal-private-methods', { loose: true }],
   ['react-native-reanimated/plugin'],
+  ["nativewind/babel"]
 );
 
 module.exports = {

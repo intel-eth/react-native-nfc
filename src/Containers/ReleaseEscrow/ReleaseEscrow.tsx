@@ -97,7 +97,9 @@ const ReleaseEscrow = ({navigation}: any) => {
         </ScrollView>
       </View>
 
-      <BottomModal height={BY_FIVE_AND_FIVE_HALF} refe={refRBSheet}>
+      <BottomModal
+        height={dynamicScale(BY_FIVE_AND_FIVE_HALF)}
+        refe={refRBSheet}>
         <View style={{}}>
           {data == 0 ? (
             <SVG.ERROR style={{alignSelf: 'center', marginTop: 15}} />

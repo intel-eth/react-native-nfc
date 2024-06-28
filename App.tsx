@@ -6,9 +6,6 @@ import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {MainStackNavigator} from '@/Navigator/HomeNavigator';
 import {persistor, store} from '@/Store';
-import Splash from '@/Containers/Authentication/Splash/Splash';
-import { AccessTokenRefresh } from '@/Provider/access-token-refersh';
-
 LogBox.ignoreLogs([
   'Warning: ...',
   'ViewPropTypes will be removed',

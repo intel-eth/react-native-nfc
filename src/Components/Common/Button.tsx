@@ -1,4 +1,6 @@
+import {dynamicScale} from '@/Helper/ResponsiveFonts';
 import {Text, theme} from '@/Theme/Theme';
+import {color} from '@shopify/restyle';
 import React from 'react';
 import {
   StyleSheet,
@@ -9,7 +11,7 @@ import {
 } from 'react-native';
 // import Lottie from 'lottie-react-native';
 // import LinearGradient from 'react-native-linear-gradient';
-
+import Ripple from 'react-native-material-ripple';
 interface ButtonProps extends TouchableOpacityProps {
   title: string;
   onPress: any;
@@ -29,7 +31,10 @@ export function Button({
   ...rest
 }: ButtonProps) {
   return (
-    <TouchableOpacity
+    <Ripple
+      rippleDuration={2000}
+      rippleColor="#F4FFA2"
+      rippleContainerBorderRadius={100}
       onPress={() => onPress()}
       style={[
         styles.buttonStyle,
@@ -57,23 +62,7 @@ export function Button({
         {title}
       </Text>
       {/* )} */}
-    </TouchableOpacity>
-  );
-}
-
-export function BorderButton({title, onPress, mt, btnViewStyle}: ButtonProps) {
-  return (
-    <TouchableOpacity
-      onPress={() => onPress()}
-      style={[
-        styles.borderButtonStyle,
-        {marginTop: mt ? mt : 0},
-        {...btnViewStyle},
-      ]}>
-      <Text variant="plus_jakarta_sans_semibold_18" color="onxy">
-        {title}
-      </Text>
-    </TouchableOpacity>
+    </Ripple>
   );
 }
 
@@ -86,7 +75,7 @@ interface IGradientButtonProps {
 
 const styles = StyleSheet.create({
   buttonStyle: {
-    height: 55,
+    height: dynamicScale(55),
     width: '90%',
     backgroundColor: theme.colors.pear,
     alignSelf: 'center',

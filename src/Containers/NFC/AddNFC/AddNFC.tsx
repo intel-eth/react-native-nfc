@@ -96,12 +96,13 @@ const AddNFC = ({navigation}: any) => {
           <View style={styles.btnView}>
             <Button
               btnViewStyle={{width: '48%', backgroundColor: theme.colors.white}}
-              txtStyle={{color: theme.colors.black}}
+              txtStyle={{color: theme.colors.black,fontSize:16}}
               title="Cancel"
               onPress={() => console.log()}
-            />
+              />
             <Button
-              btnViewStyle={{width: '48%'}}
+              btnViewStyle={{width: '48%',}}
+              txtStyle={{fontSize:16}}
               title="Confirm"
               onPress={handleSubmit as () => void}
             />
@@ -109,7 +110,7 @@ const AddNFC = ({navigation}: any) => {
         </View>
       </View>
 
-      <BottomModal height={BY_SIX_HALF} refe={refRBSheet}>
+      <BottomModal height={dynamicScale(BY_SIX_HALF)} refe={refRBSheet}>
         <>
           <View>
             <SVG.BOTTOM_SHEET_CHECK style={{alignSelf: 'center'}} />

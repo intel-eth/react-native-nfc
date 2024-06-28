@@ -1,21 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList, Image, Pressable, StyleSheet, View} from 'react-native';
-import {
-  SCREEN_WIDTH,
-  dynamicScale,
-} from '@/Helper/ResponsiveFonts';
+import {SCREEN_WIDTH, dynamicScale} from '@/Helper/ResponsiveFonts';
 import {Text, theme} from '@/Theme/Theme';
 import {SingleSafeAreaView} from '@/Components/Common/SafeAreaView';
 import SVG from '@/Utils/Assets/Svg';
 import {Header} from '@/Components/Common/Header';
 import STRINGS from '@/Utils/Constants/String';
 import {Button} from '@/Components/Common/Button';
-import {ACTIVE_NFC, NFT_SUMMERY, RELEASE_ESCROW} from '@/Navigator/HomeNavigator';
+import {
+  ACTIVE_NFC,
+  NFT_SUMMERY,
+  RELEASE_ESCROW,
+} from '@/Navigator/HomeNavigator';
 import {useIsAddNFCSuccess, useIsRemoveFirst} from '@/Hooks/CustomHook';
 import {dummyNFC} from '@/Utils/Constants/Dummy';
 import {useDispatch} from 'react-redux';
-import {setIsRemoveFirst} from '@/Store/slices/local';
-
 const Home = ({navigation}: any) => {
   const isHaveNFCDetails = useIsAddNFCSuccess();
   const isRemoveFirst = useIsRemoveFirst();
@@ -95,7 +94,7 @@ const Home = ({navigation}: any) => {
                                       })
                                     : item.id == 2
                                     ? navigation.navigate(RELEASE_ESCROW)
-                                    : navigation.navigate(NFT_SUMMERY,{item});
+                                    : navigation.navigate(NFT_SUMMERY, {item});
                                 }
                               }}
                               txtStyle={{
@@ -184,7 +183,7 @@ const styles = StyleSheet.create({
   },
   btn2: {
     width: '40%',
-    backgroundColor: theme.colors.placeHolder,
+    backgroundColor: theme.colors.pear,
     borderWidth: 1,
     borderColor: theme.colors.placeHolder,
     height: dynamicScale(23),

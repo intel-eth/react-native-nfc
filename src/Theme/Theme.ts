@@ -218,8 +218,8 @@ export const theme = {
     },
     //#endregion
 
-     //#region 14
-     plus_jakarta_sans_regular_14: {
+    //#region 14
+    plus_jakarta_sans_regular_14: {
       ...FontSize.fontSize_14(true),
       color: 'black',
       fontFamily: PLUS_JAKARTA_SANS_REGULAR,

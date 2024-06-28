@@ -142,7 +142,7 @@ const NFTSummery = ({navigation, route}: any) => {
           </View>
         </ScrollView>
       </View>
-      <BottomModal height={BY_SIX_HALF} refe={refRBSheet}>
+      <BottomModal height={dynamicScale(BY_SIX_HALF)} refe={refRBSheet}>
         <View style={{}}>
           <SVG.WARNING style={{alignSelf: 'center', marginTop: 15}} />
           <Text
