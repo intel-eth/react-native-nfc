@@ -13,8 +13,8 @@ import {ADD_NFC} from '@/Navigator/HomeNavigator';
 import {BottomModal} from '@/Components/Common/BottomSheet';
 import {Button} from '@/Components/Common/Button';
 import STRINGS from '@/Utils/Constants/String';
-import { useDispatch } from 'react-redux';
-import { setIsRemoveFirst } from '@/Store/slices/local';
+import {useDispatch} from 'react-redux';
+import {setIsRemoveFirst} from '@/Store/slices/local';
 
 const ActiveNFC = ({navigation, route}: any) => {
   const refRBSheet = useRef<any>();
@@ -23,22 +23,20 @@ const ActiveNFC = ({navigation, route}: any) => {
   return (
     <>
       <SingleSafeAreaView />
-      <View style={styles.root}>
+      <View className="flex-1 bg-blackBG">
         <Header withUser />
-        <View style={[styles.root, {justifyContent: 'center'}]}>
+        <View className="flex-1 bg-blackBG justify-center">
           <Pressable
             onPress={() => {
               params == 'tagList'
                 ? refRBSheet.current.open()
                 : navigation.navigate(ADD_NFC);
             }}>
-            <SVG.NFC_SCAN
-              style={{alignSelf: 'center', marginBottom: dynamicScale(30)}}
-            />
+            <SVG.NFC_SCAN className="self-center mb-8" />
           </Pressable>
           {params == 'tagList' ? (
             <>
-              <View style={{width: '70%', alignSelf: 'center'}}>
+              <View className="self-center w-0.70">
                 <Text
                   textAlign="center"
                   color="dimWhite"
@@ -68,9 +66,7 @@ const ActiveNFC = ({navigation, route}: any) => {
 
       <BottomModal height={dynamicScale(BY_FOUR_HALF)} refe={refRBSheet}>
         <>
-          <SVG.BOTTOM_SHEET_CHECK
-            style={{alignSelf: 'center', marginTop: 15}}
-          />
+          <SVG.BOTTOM_SHEET_CHECK className="self-center mt-15" />
           <Text
             textAlign="center"
             color="black"
@@ -78,7 +74,7 @@ const ActiveNFC = ({navigation, route}: any) => {
             variant="plus_jakarta_sans_semibold_18">
             {`Congratulations\nYour minting process is complete`}
           </Text>
-          <View style={{flex: 0.7, justifyContent: 'flex-end'}}>
+          <View className="flex-0.7 justify-end">
             <Button
               onPress={() => {
                 dispatch(setIsRemoveFirst(true));

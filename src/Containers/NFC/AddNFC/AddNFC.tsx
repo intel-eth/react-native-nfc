@@ -1,13 +1,9 @@
-import {StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
 import React, {useRef} from 'react';
 import {SingleSafeAreaView} from '@/Components/Common/SafeAreaView';
 import {Text, theme} from '@/Theme/Theme';
 import {Header} from '@/Components/Common/Header';
-import {
-  BY_SIX_HALF,
-  BY_THREE_HALF,
-  dynamicScale,
-} from '@/Helper/ResponsiveFonts';
+import {BY_SIX_HALF, dynamicScale} from '@/Helper/ResponsiveFonts';
 import {
   ErrorTextMessage,
   InputWithTitle,
@@ -20,7 +16,6 @@ import SVG from '@/Utils/Assets/Svg';
 import STRINGS, {addNFCBottomSheet} from '@/Utils/Constants/String';
 import {useDispatch} from 'react-redux';
 import {setIsAddNFCSuccess} from '@/Store/slices/local';
-import {MAIN_TAB} from '@/Navigator/HomeNavigator';
 
 const AddNFC = ({navigation}: any) => {
   const refRBSheet = useRef<any>();
@@ -56,12 +51,12 @@ const AddNFC = ({navigation}: any) => {
   return (
     <>
       <SingleSafeAreaView />
-      <View style={styles.root}>
+      <View className="flex-1 bg-blackBG">
         <Header withUser headerStyle={{marginBottom: dynamicScale(20)}} />
-        <View style={{paddingHorizontal: dynamicScale(24)}}>
+        <View className="pr-6 pl-6">
           {/* #region InputBox */}
           <>
-            <View style={{marginBottom: dynamicScale(15)}}>
+            <View className="mb-15">
               <InputWithTitle
                 withoutStar
                 placeholder="#1646164531313"
@@ -73,7 +68,7 @@ const AddNFC = ({navigation}: any) => {
                 <ErrorTextMessage errorMessage={errors.nfcID as string} />
               )}
             </View>
-            <View style={{marginBottom: dynamicScale(15)}}>
+            <View className="mb-15">
               <InputWithTitle
                 placeholder="Enter name"
                 title={'Artwork name'}
@@ -93,16 +88,16 @@ const AddNFC = ({navigation}: any) => {
             be attached. You can edit the name of the work you wrote now during
             the minting stage.
           </Text>
-          <View style={styles.btnView}>
+          <View className="w-full flex-row items-center justify-between mt-6">
             <Button
               btnViewStyle={{width: '48%', backgroundColor: theme.colors.white}}
-              txtStyle={{color: theme.colors.black,fontSize:16}}
+              txtStyle={{color: theme.colors.black, fontSize: 16}}
               title="Cancel"
               onPress={() => console.log()}
-              />
+            />
             <Button
-              btnViewStyle={{width: '48%',}}
-              txtStyle={{fontSize:16}}
+              btnViewStyle={{width: '48%'}}
+              txtStyle={{fontSize: 16}}
               title="Confirm"
               onPress={handleSubmit as () => void}
             />
@@ -113,8 +108,8 @@ const AddNFC = ({navigation}: any) => {
       <BottomModal height={dynamicScale(BY_SIX_HALF)} refe={refRBSheet}>
         <>
           <View>
-            <SVG.BOTTOM_SHEET_CHECK style={{alignSelf: 'center'}} />
-            <View style={styles.bottomSheetView}>
+            <SVG.BOTTOM_SHEET_CHECK className="self-center" />
+            <View className="pl-6 w-0.9 self-center mb-8 pr-6">
               <Text
                 color="black"
                 textAlign="center"
@@ -125,8 +120,8 @@ const AddNFC = ({navigation}: any) => {
             {addNFCBottomSheet.map((item: any) => {
               return (
                 <>
-                  <View style={styles.sheetRoot}>
-                    <View style={styles.sheetSubRoot}>
+                  <View className="h-9 pl-7 pr-7 items-center mb-15 flex-row">
+                    <View className="h-9 w-9 bg-gray mr-15 justify-center rounded-30">
                       <Text
                         color="black"
                         textAlign="center"
@@ -156,38 +151,3 @@ const AddNFC = ({navigation}: any) => {
 };
 
 export default AddNFC;
-
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    backgroundColor: theme.colors.blackBG,
-  },
-  btnView: {
-    width: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginTop: dynamicScale(24),
-  },
-  sheetRoot: {
-    height: dynamicScale(35),
-    paddingHorizontal: dynamicScale(28),
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: dynamicScale(15),
-  },
-  sheetSubRoot: {
-    height: dynamicScale(34),
-    width: dynamicScale(34),
-    backgroundColor: theme.colors.gray,
-    marginRight: dynamicScale(15),
-    justifyContent: 'center',
-    borderRadius: 30,
-  },
-  bottomSheetView: {
-    paddingHorizontal: 20,
-    width: '90%',
-    alignSelf: 'center',
-    marginBottom: dynamicScale(35),
-  },
-});

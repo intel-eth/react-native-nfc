@@ -1,6 +1,6 @@
 import {Header} from './../../../Components/Common/Header';
-import React, {useEffect, useRef, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import React, {useRef} from 'react';
+import {View} from 'react-native';
 import {BY_THREE_HALF, dynamicScale} from '@/Helper/ResponsiveFonts';
 import {Text, theme} from '@/Theme/Theme';
 import {SingleSafeAreaView} from '@/Components/Common/SafeAreaView';
@@ -22,27 +22,23 @@ const Login = ({navigation}: any) => {
   return (
     <>
       <SingleSafeAreaView />
-      <View style={styles.root}>
+      <View className="flex-1 bg-blackBG">
         <Header />
 
         <WhiteSpace size={isLogin ? 50 : 100} />
         {isLogin ? (
           <>
-            <SVG.USER_IMAGE style={{alignSelf: 'center'}} />
+            <SVG.USER_IMAGE className="self-center" />
             <WhiteSpace size={20} />
           </>
         ) : (
           <>
-            <SVG.LOGIN_USER style={{alignSelf: 'center'}} />
+            <SVG.LOGIN_USER className="self-center" />
             <WhiteSpace size={50} />
           </>
         )}
 
-        <View
-          style={{
-            // maxWidth: dynamicScale(225),
-            alignSelf: 'center',
-          }}>
+        <View className="self-center">
           {isLogin ? (
             <>
               <Text
@@ -76,8 +72,8 @@ const Login = ({navigation}: any) => {
         </View>
         {isLogin ? (
           <>
-            <View style={styles.profileView}>
-              <SVG.CRYPTO_ICON style={{marginRight: 20}} />
+            <View className="w-11/12 pt-6 pb-6 bg-onxy pl-7 pr-7 flex-row items-center rounded-3xl self-center ">
+              <SVG.CRYPTO_ICON className="mr-5" />
               <View>
                 <Text color="white" variant="plus_jakarta_sans_semibold_18">
                   0x1743...2343d
@@ -100,14 +96,13 @@ const Login = ({navigation}: any) => {
         )}
 
         {isLogin && (
-          <View
-            style={{
-              flex: 0.9,
-              justifyContent: 'flex-end',
-            }}>
+          <View className="flex-1 pb-3 justify-end">
             <Button
               btnViewStyle={{backgroundColor: theme.colors.white}}
-              onPress={() => dispatch(userLogout())}
+              onPress={() => {
+                console.log('Button Press');
+                dispatch(userLogout());
+              }}
               title="Log out"
             />
           </View>
@@ -128,8 +123,8 @@ const Login = ({navigation}: any) => {
             {loginBottomSheet.map((item: any) => {
               return (
                 <>
-                  <View style={styles.sheetRoot}>
-                    <View style={styles.sheetSubRoot}>
+                  <View className="h-9 pl-7 pr-7 flex-row items-center mb-5">
+                    <View className="h-9 w-9 bg-gray mr-4 justify-center rounded-3xl ">
                       <Text
                         color="black"
                         textAlign="center"
@@ -157,37 +152,5 @@ const Login = ({navigation}: any) => {
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    backgroundColor: theme.colors.blackBG,
-  },
-  sheetRoot: {
-    height: dynamicScale(35),
-    paddingHorizontal: dynamicScale(28),
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: dynamicScale(20),
-  },
-  sheetSubRoot: {
-    height: dynamicScale(34),
-    width: dynamicScale(34),
-    backgroundColor: theme.colors.gray,
-    marginRight: dynamicScale(15),
-    justifyContent: 'center',
-    borderRadius: 30,
-  },
-  profileView: {
-    width: '87%',
-    paddingVertical: 25,
-    backgroundColor: theme.colors.onxy,
-    alignSelf: 'center',
-    paddingHorizontal: 30,
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: 20,
-  },
-});
 
 export default Login;

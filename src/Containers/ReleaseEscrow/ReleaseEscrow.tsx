@@ -1,4 +1,4 @@
-import {Image, ScrollView, StyleSheet, View} from 'react-native';
+import {Image, ScrollView, View} from 'react-native';
 import React, {useRef, useState} from 'react';
 import {SingleSafeAreaView} from '@/Components/Common/SafeAreaView';
 import {Text, theme} from '@/Theme/Theme';
@@ -21,10 +21,10 @@ const ReleaseEscrow = ({navigation}: any) => {
   return (
     <>
       <SingleSafeAreaView />
-      <View style={styles.root}>
+      <View className="flex-1 bg-blackBG">
         <Header withUser headerStyle={{marginBottom: dynamicScale(20)}} />
         <ScrollView>
-          <View style={[styles.root, {paddingHorizontal: dynamicScale(24)}]}>
+          <View className="flex-1 bg-blackBG pl-6 pr-6">
             <Text variant="plus_jakarta_sans_bold_24" color="white">
               Themesflat #354
             </Text>
@@ -34,11 +34,10 @@ const ReleaseEscrow = ({navigation}: any) => {
                 width: SCREEN_WIDTH - 50,
                 resizeMode: 'cover',
                 height: SCREEN_HEIGHT / 2,
-                marginTop: dynamicScale(15),
-                marginBottom: dynamicScale(15),
               }}
+              className="mt-4 mb-4"
             />
-            <View style={styles.rowView}>
+            <View className="flex-row justify-between items-center">
               <Text variant="plus_jakarta_sans_semibold_16" color="white">
                 Kim minjae
               </Text>
@@ -46,7 +45,7 @@ const ReleaseEscrow = ({navigation}: any) => {
                 $2,000
               </Text>
             </View>
-            <View style={styles.rowView}>
+            <View className="flex-row justify-between items-center">
               <Text
                 variant="plus_jakarta_sans_regular_14"
                 fontWeight="400"
@@ -61,6 +60,7 @@ const ReleaseEscrow = ({navigation}: any) => {
                 Last Price
               </Text>
             </View>
+
             <Text
               variant="plus_jakarta_sans_regular_12"
               fontWeight="400"
@@ -74,7 +74,7 @@ const ReleaseEscrow = ({navigation}: any) => {
               laudantium, totam rem aperiam, eaque ipsa quae
             </Text>
           </View>
-          <View style={styles.btnView}>
+          <View className="w-0.90 flex-row items-center justify-between mt-6 self-center mb-8">
             <Button
               btnViewStyle={{width: '48%', backgroundColor: theme.colors.white}}
               txtStyle={{color: theme.colors.black, fontSize: 16}}
@@ -100,11 +100,11 @@ const ReleaseEscrow = ({navigation}: any) => {
       <BottomModal
         height={dynamicScale(BY_FIVE_AND_FIVE_HALF)}
         refe={refRBSheet}>
-        <View style={{}}>
+        <View>
           {data == 0 ? (
-            <SVG.ERROR style={{alignSelf: 'center', marginTop: 15}} />
+            <SVG.ERROR className="self-center mt-15" />
           ) : (
-            <SVG.PARTY style={{alignSelf: 'center', marginTop: 15}} />
+            <SVG.PARTY className="self-center mt-15" />
           )}
           <Text
             variant="plus_jakarta_sans_bold_24"
@@ -113,7 +113,7 @@ const ReleaseEscrow = ({navigation}: any) => {
             color="black">
             {data == 0 ? 'Something is wrong' : 'Congratulations!'}
           </Text>
-          <View style={{marginHorizontal: 25}}>
+          <View className="ml-6 mr-6">
             <Text
               variant="plus_jakarta_sans_semibold_18"
               textAlign="center"
@@ -142,24 +142,3 @@ const ReleaseEscrow = ({navigation}: any) => {
 };
 
 export default ReleaseEscrow;
-
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    backgroundColor: theme.colors.blackBG,
-  },
-  btnView: {
-    width: '90%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginTop: dynamicScale(24),
-    alignSelf: 'center',
-    marginBottom: dynamicScale(30),
-  },
-  rowView: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-});

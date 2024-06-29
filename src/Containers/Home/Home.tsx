@@ -31,24 +31,20 @@ const Home = ({navigation}: any) => {
   return (
     <>
       <SingleSafeAreaView />
-      <View style={styles.root}>
+      <View className="flex-1 bg-blackBG">
         <Header withUser headerStyle={{marginBottom: dynamicScale(20)}} />
-        <View style={{width: SCREEN_WIDTH - 45, alignSelf: 'center'}}>
-          <SVG.HOME_BANNER
-            width={SCREEN_WIDTH - 45}
-            style={{alignSelf: 'center', marginBottom: 5}}
-          />
+        <View className="w-4/3 self-center mb-2">
+          <SVG.HOME_BANNER width={SCREEN_WIDTH - 45} className="self-center" />
           <Pressable
             onPress={() =>
               navigation.navigate(ACTIVE_NFC, {
                 from: 'banner',
               })
             }
-            style={styles.bliendBtn}
+            className="absolute w-4/5 self-center h-1/5 bottom-6 rounded-xl"
           />
         </View>
-
-        <View style={styles.subRoot}>
+        <View className="flex-1 bg-dark_jungle_green pl-6 pr-6 rounded-t-3xl">
           {isHaveNFCDetails ? (
             <>
               <FlatList
@@ -56,22 +52,25 @@ const Home = ({navigation}: any) => {
                 data={data}
                 renderItem={({item, index}: any) => {
                   return (
-                    <View style={styles.r1}>
-                      <Image style={styles.subRoot1} source={item.image} />
-                      <View style={styles.main}>
+                    <View className="flex-row pr-4 pl-4 pt-4 pb-4 bg-onxy mb-3 rounded-2xl items-center">
+                      <Image
+                        className="h-16 w-16 mr-3 rounded-2xl"
+                        source={item.image}
+                      />
+                      <View className="w-3/4 h-10">
                         <Text
                           color="darkGray"
                           variant="plus_jakarta_sans_semibold_16">
                           {item.tag}
                         </Text>
-                        <View style={styles.root1}>
+                        <View className="flex-row justify-between items-center">
                           <Text
                             color="darkGray"
                             fontWeight="500"
                             variant="plus_jakarta_sans_regular_14">
                             {item.count}
                           </Text>
-                          <View style={styles.btnView}>
+                          <View className="flex-row items-center justify-end">
                             <Button
                               btnViewStyle={styles.btn1}
                               onPress={() => {
@@ -115,11 +114,9 @@ const Home = ({navigation}: any) => {
             </>
           ) : (
             <>
-              <View style={{flex: 1, justifyContent: 'center'}}>
-                <SVG.CLOCK_SNOOZE
-                  style={{alignSelf: 'center', marginBottom: dynamicScale(10)}}
-                />
-                <View style={{width: SCREEN_WIDTH / 2, alignSelf: 'center'}}>
+              <View className="flex-1 justify-center items-center">
+                <SVG.CLOCK_SNOOZE className="mb-3.5" />
+                <View className=" align-middle items-center w-2/4">
                   <Text
                     textAlign="center"
                     color="darkGray"
@@ -137,42 +134,6 @@ const Home = ({navigation}: any) => {
 };
 
 const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    backgroundColor: theme.colors.blackBG,
-  },
-  bliendBtn: {
-    position: 'absolute',
-    height: dynamicScale(42),
-    bottom: 30,
-    width: '91%',
-    alignSelf: 'center',
-    borderRadius: 10,
-  },
-  subRoot: {
-    flex: 1,
-    // justifyContent: 'center',
-    backgroundColor: theme.colors.dark_jungle_green,
-    paddingHorizontal: 24,
-    borderTopLeftRadius: dynamicScale(30),
-    borderTopRightRadius: dynamicScale(30),
-  },
-  r1: {
-    width: '100%',
-    paddingVertical: dynamicScale(16),
-    paddingHorizontal: dynamicScale(16),
-    marginBottom: dynamicScale(10),
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: theme.colors.onxy,
-    borderRadius: 20,
-  },
-  subRoot1: {
-    height: dynamicScale(62),
-    width: dynamicScale(62),
-    borderRadius: 15,
-    marginRight: 10,
-  },
   btn1: {
     width: '35%',
     marginRight: 10,
@@ -187,20 +148,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: theme.colors.placeHolder,
     height: dynamicScale(23),
-  },
-  btnView: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-  },
-  root1: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  main: {
-    height: dynamicScale(40),
-    width: '75%',
   },
 });
 

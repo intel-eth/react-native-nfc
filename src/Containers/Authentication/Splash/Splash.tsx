@@ -1,11 +1,7 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {
-  SCREEN_HEIGHT,
-  SCREEN_WIDTH,
-  dynamicScale,
-} from '@/Helper/ResponsiveFonts';
-import {Text, theme} from '@/Theme/Theme';
+import {View} from 'react-native';
+import {SCREEN_WIDTH} from '@/Helper/ResponsiveFonts';
+import {Text} from '@/Theme/Theme';
 import {MAIN_TAB} from '@/Navigator/HomeNavigator';
 import STRINGS from '@/Utils/Constants/String';
 import {CommonActions, useNavigation} from '@react-navigation/native';
@@ -29,21 +25,19 @@ const Splash = ({navigation}: any) => {
 
   return (
     <>
-      <View style={styles.root}>
+      <View className="bg-blackBG flex-1 ">
         <View
+          className="flex-col justify-evenly h-full"
           style={{
-            justifyContent: 'space-evenly',
-            height: SCREEN_HEIGHT,
-            flexDirection: 'column',
             paddingBottom: isAndroid() ? 20 : 0,
           }}>
           <View>
-            <SVG.VAULT_LOGO style={styles.logoView} />
+            <SVG.VAULT_LOGO className="self-center" />
           </View>
           <View>
-            <SVG.FACE_ICON style={styles.faceView} />
+            <SVG.FACE_ICON className="self-center" />
           </View>
-          <View style={{}}>
+          <View>
             <Text
               textAlign="center"
               color="white"
@@ -69,28 +63,10 @@ const Splash = ({navigation}: any) => {
             </Text>
           </View>
         </View>
-        <SVG.LINE width={SCREEN_WIDTH} style={styles.lineView} />
+        <SVG.LINE width={SCREEN_WIDTH} className="absolute bottom-0" />
       </View>
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  root: {
-    width: SCREEN_WIDTH,
-    height: SCREEN_HEIGHT,
-    justifyContent: 'center',
-    backgroundColor: theme.colors.blackBG,
-  },
-  logoView: {
-    alignSelf: 'center',
-  },
-  faceView: {
-    // position: 'absolute',
-    // top: dynamicScale(40),
-    alignSelf: 'center',
-  },
-  lineView: {position: 'absolute', bottom: 0},
-});
 
 export default Splash;

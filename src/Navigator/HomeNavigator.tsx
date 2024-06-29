@@ -2,10 +2,7 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createStackNavigator} from '@react-navigation/stack';
-import {StatusBar, StyleSheet} from 'react-native';
-import {isIOS} from '@/Helper/VersionCheck';
-import {theme} from '@/Theme/Theme';
-import Login from '@/Containers/Authentication/Login';
+import {StatusBar} from 'react-native';
 import Splash from '@/Containers/Authentication/Splash/Splash';
 import MainTab from './BottomTabNavigator/Maintab';
 import ThirdWebWallet from '@/Containers/Authentication/EmptyWhite/ThirdWebWallet';
@@ -90,13 +87,5 @@ const NFCMintingNavigator = () => {
     </NavigationContainer>
   );
 };
-// export {MainStackNavigator, SearchNavigator, OwnerNavigator};
 
 export {MainStackNavigator, NFCMintingNavigator};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: theme.colors.white,
-  },
-});

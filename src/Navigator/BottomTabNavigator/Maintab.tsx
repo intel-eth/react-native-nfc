@@ -45,7 +45,7 @@ const MainTab = ({navigation}: any) => {
           }}
         />
       </Tab.Navigator>
-      <SafeAreaView style={{backgroundColor: theme.colors.black}} />
+      <SafeAreaView className="bg-black" />
     </>
   );
 };
@@ -61,8 +61,10 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: theme.colors.black,
     borderTopWidth: 0,
-    height: dynamicScale(65),
-    paddingTop: isAndroid() ? 0:30,
+    // height: dynamicScale(65),
+    // paddingTop: isAndroid() ? 0:30,
+    paddingVertical: isAndroid() ? 30 : 30,
+    paddingBottom: isAndroid() ? 30 : 30,
     paddingHorizontal: dynamicScale(15),
   },
 });

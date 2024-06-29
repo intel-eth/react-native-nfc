@@ -1,4 +1,4 @@
-import {Image, ScrollView, StyleSheet, View} from 'react-native';
+import {Image, ScrollView, View} from 'react-native';
 import React, {useRef} from 'react';
 import {SingleSafeAreaView} from '@/Components/Common/SafeAreaView';
 import {Text, theme} from '@/Theme/Theme';
@@ -21,25 +21,24 @@ const NFTSummery = ({navigation, route}: any) => {
   return (
     <>
       <SingleSafeAreaView />
-      <View style={styles.root}>
+      <View className="flex-1 bg-blackBG">
         <Header withUser headerStyle={{marginBottom: dynamicScale(20)}} />
         <ScrollView>
-          <View style={[styles.root, {paddingHorizontal: dynamicScale(24)}]}>
+          <View className="flex-1 bg-blackBG pl-6 pr-6">
             <Text variant="plus_jakarta_sans_bold_24" color="white">
               Themesflat #354
             </Text>
             <Image
               source={params.id == 4 ? Assets.S4 : Assets.S2}
+              className="mt-4 mb-4"
               style={{
                 width: SCREEN_WIDTH - 50,
                 resizeMode: 'cover',
-                // height: 250,
                 height: SCREEN_HEIGHT / 3.5,
-                marginTop: dynamicScale(15),
-                marginBottom: dynamicScale(15),
               }}
             />
-            <View style={styles.rowView}>
+
+            <View className="flex-row justify-between items-center">
               <Text variant="plus_jakarta_sans_semibold_16" color="white">
                 Kim minjae
               </Text>
@@ -47,7 +46,8 @@ const NFTSummery = ({navigation, route}: any) => {
                 $2,000
               </Text>
             </View>
-            <View style={styles.rowView}>
+
+            <View className="flex-row justify-between items-center">
               <Text
                 variant="plus_jakarta_sans_regular_14"
                 fontWeight="400"
@@ -76,19 +76,8 @@ const NFTSummery = ({navigation, route}: any) => {
               laudantium, totam rem aperiam, eaque ipsa quae
             </Text>
 
-            <View
-              style={{
-                width: '100%',
-                paddingBottom: 15,
-                paddingTop: 10,
-                backgroundColor: theme.colors.black,
-                paddingHorizontal: dynamicScale(20),
-                marginTop: dynamicScale(24),
-                borderRadius: 20,
-                borderWidth: 2,
-                borderColor: theme.colors.borderColor,
-              }}>
-              <SVG.BLUE_CHECK style={{alignSelf: 'center'}} />
+            <View className="w-full pb-4 pt-3 bg-black pl-20 pr-20 mt-6 rounded-20 border-borderColor border-2">
+              <SVG.BLUE_CHECK className="self-center" />
               {params.id == 4 ? (
                 <>
                   <Text
@@ -128,6 +117,7 @@ const NFTSummery = ({navigation, route}: any) => {
                 </Text>
               )}
             </View>
+            
             <Button
               btnViewStyle={{
                 width: '48%',
@@ -142,9 +132,10 @@ const NFTSummery = ({navigation, route}: any) => {
           </View>
         </ScrollView>
       </View>
+
       <BottomModal height={dynamicScale(BY_SIX_HALF)} refe={refRBSheet}>
-        <View style={{}}>
-          <SVG.WARNING style={{alignSelf: 'center', marginTop: 15}} />
+        <View>
+          <SVG.WARNING className="self-center mt-15" />
           <Text
             variant="plus_jakarta_sans_bold_24"
             mt="14"
@@ -158,7 +149,7 @@ const NFTSummery = ({navigation, route}: any) => {
             color="black">
             Our Website First!
           </Text>
-          <View style={{marginHorizontal: 25}}>
+          <View className="ml-6 mr-6">
             <Text
               variant="plus_jakarta_sans_semibold_18"
               textAlign="center"
@@ -187,15 +178,3 @@ const NFTSummery = ({navigation, route}: any) => {
 };
 
 export default NFTSummery;
-
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    backgroundColor: theme.colors.blackBG,
-  },
-  rowView: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-});
